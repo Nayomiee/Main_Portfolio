@@ -1,16 +1,27 @@
 :root{
-    --box-shadow:#d96c06;
+    --box-shadow:rgba(0,0,0,0.1);
     --heading:#0f0a0a;
-    --hover:#d96c06;
+    --hover:#1f5961;
     --link:#246b72;
     --text:#f0f0f0;
     --gray-text:#484848;
+    --background-color:#f4f8f9;
+    --dark-text:#2c2c2c;
+    --accent:#f28c38;
+    --link-hover:#f28c38;
+    --outline-color:#246b72;
+    --border-color:#e0e0e0;
+    --highlight:#f28c38;
+    --cards:#f4f8f9;
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'montserrat', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
 }
 body{
     max-width:100%;
@@ -39,7 +50,7 @@ body{
     min-width: 400px;
     min-height: 400px;
     border-radius: 50%;
-    border: 1px solid var(--gray-text);
+    border: 1px solid var(--border-color);
     box-shadow: 0 2px 4px var(--box-shadow);
 }
 .card .container .text-div{
@@ -74,7 +85,7 @@ body{
     font-weight: bold;
 }
 .container .connect button:hover{
-    background-color: var(--box-shadow);
+    background-color: var(--hover);
     color: #f0f0f0;
     font-weight: bold;
 }
@@ -87,7 +98,7 @@ body{
     color: var(--link);
 }
 .container .connect .icon-links a:hover i{
-   color: var(--hover);
+   color: var(--link-hover);
 }
 @media (max-width:840px){
     .card .container{
@@ -106,7 +117,7 @@ body{
     opacity: 0;
     transition: opacity 0.5s ease, filter 0.5s ease;
     filter: blur(10px);
-    background-color: var(--text);
+    background-color: var(--background-color);
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -134,9 +145,9 @@ body{
     padding: 1rem 2rem;
     margin: 0 auto;
 }
-.page header .logo h2{
+.page header .container .logo h2{
     font-size: 2.7rem;
-    color: var(--heading);
+    color: var(--outline-color)!important;
     padding: 1rem 1.5rem;
     border-radius: 50%;
     box-shadow: 
@@ -159,7 +170,7 @@ body{
     text-transform: uppercase;
 }
 .page header .menu li:hover a{
-    color: var(--hover);
+    color: var(--link-hover);
 }
 a{
     text-decoration: none;
@@ -171,20 +182,20 @@ a{
 .page header button{
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    border: none;
+    border: 1px solid var(--outline-color);
     box-shadow: 0 0 2px var(--box-shadow);
     font-weight: bold;
     transition:background-color 0.3s ease-in-out ;
 }
 .page header button a {
-    color: var(--gray-text);
+    color: var(--link);
 }
 .page header button:hover a {
-    color: var(--gray-text);
+    color: var(--link-hover);
     color: #f0f0f0;
 }
 .page header button:hover{
-    background-color: var(--box-shadow);
+    background-color: var(--link);
     font-weight: bold;
 }
 /* about section */
@@ -203,9 +214,9 @@ a{
     min-width: 300px;
     min-height: 300px;
     border-radius: 50%;
-    border: 1px solid var(--gray-text);
+    border: 1px solid var(--border-color);
     box-shadow: 0 2px 4px var(--box-shadow);
-    outline: 3px solid var(--box-shadow);
+    outline: 3px solid var(--outline-color);
     outline-offset:-5px ;
     max-width: 50%;
 }
@@ -219,13 +230,13 @@ a{
 }
 #about .container .text-container .heading h1{
     font-size: 3rem;
-    color: var(--heading);
+    color: var(--link);
     text-align: left;
 }
 #about .container .text-container .heading p{
     text-align: left;
     font-weight: lighter;
-    color: var(--gray-text);
+    color: var(--dark-text);
     font-size: 0.8rem;
     
 }
@@ -235,7 +246,7 @@ a{
 }
 #about .container .text-container .introduction p span{
     font-weight: bolder;
-    color: var(--hover);
+    color: var(--highlight);
 }
 #about .container .text-container .links{
    display: flex;
@@ -249,11 +260,11 @@ a{
    font-size: 2rem;
 }
 #about .container .text-container .links .icons a{
-  color: var(--link);
+  color: var(--outline-color);
   transition: color 0.3s ease-in-out;
 }
 #about .container .text-container .links .icons a:hover{
-  color: var(--hover);
+  color: var(--accent);
 }
 #about .container .text-container .links button{
     padding: 0.5rem 3rem;
@@ -264,14 +275,14 @@ a{
     width: fit-content;
 }
 #about .container .text-container .links button:hover{
-    background-color: var(--box-shadow);
+    background-color: var(--link);
 }
 #about .container .text-container .links button a{
-    color: var(--gray-text);
+    color: var(--link);
     font-weight: bold;
 }
 #about .container .text-container .links button:hover a{
-    color: var(--text);
+    color:#fff;
 }
 /* skills section */
 #skills{
@@ -282,6 +293,8 @@ a{
     gap: 1rem;
     margin-bottom:3rem;
     padding: 1rem 0;
+    background-color: var(--background-color);
+    color: var(--dark-text);
 }
 #skills h2{
     font-size: 3rem;
@@ -291,7 +304,7 @@ a{
     flex-wrap: wrap;
     justify-content: center;
     gap: 3rem;
-    
+    width: 100%;
 }
 #skills .skill-container div{
     min-width: 20%;
@@ -307,7 +320,7 @@ a{
 #skills .skill-container .progress-bar {
    width: 100%;
    height: 20px;
-   background-color: #dddddd;
+   background-color: #e0e0e0;
    border-radius: 5px;
    border: 1px solid gray;
    overflow: hidden;
@@ -316,7 +329,7 @@ a{
 #skills .skill-container .progress-bar .progress {
    display: block;
    height: 100%;
-   background-color: var(--link);
+   background-color: var(--accent);
    transition: width 0.5s ease;
    position: absolute;
    left: 0;
@@ -383,24 +396,97 @@ a{
 #projects .gallery .cards .buttons button{
     padding: 0.5rem 3rem;
     border-radius: 0.5rem;
-    border: 1px solid #000;
     box-shadow: 0 0 2px var(--box-shadow);
     transition: background-color 0.3s ease-in-out;
     background-color: var(--link);
     cursor:pointer;
     transition: all 0.3s ease-in-out;
+    border: none;
+}
+#projects .gallery .cards .buttons .sec-btn{
+    background-color: var(--highlight);
+}
+#projects .gallery .cards .buttons .sec-btn:hover{
+    background-color: #d77a31;
 }
 #projects .gallery .cards .buttons button:hover{
     background-color: var(--hover);
 }
 #projects .gallery .cards .buttons button:hover a{
-    color: #000;
+    color: #fff;
 }
 #projects .gallery .cards .buttons button a{
-    color: var(--text);
+    color: #fff;
     transition: all 0.2s ease-in-out;
 }
-
+#projects button{
+    padding: 0.5rem 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 2px var(--box-shadow);
+    transition: background-color 0.3s ease-in-out;
+    background-color: var(--link);
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+#projects button:hover{
+    background-color: var(--hover);
+    border: 2px solid var(--box-shadow);
+}
+#projects button a{
+    color: #fff;
+}
+#projects button:hover a{
+    color: #fff;
+}
+footer{
+    background-color: var(--link);
+    height: 10vh;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+}
+/* CONTACT SECTION */
+#contact {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 2rem auto ;
+}
+#contact .contact-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+#contact .contact-container .textarea {
+    width: 70%;
+}
+#contact .contact-container .textarea p{
+   font-size: 2.5rem;
+   font-weight: 600;
+   margin-bottom: 1rem;
+   text-transform: uppercase;
+}
+#contact .contact-container .textarea textarea{
+    width: 100%;
+    padding: 5rem 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+#contact .contact-container .connectme {
+    display: flex;
+    gap: 3rem;
+}
+#contact .contact-container .connectme a {
+    font-size: 3rem;
+    color: var(--link);
+}
+#contact .contact-container .connectme a:hover {
+    color: var(--link-hover);
+}
 @media (max-width:840px){
     .page header .menu{
         display: none;  
@@ -449,6 +535,15 @@ a{
     }
     #about .container .text-container .links{
         align-items: center; 
-     }
+    }
+    #contact .contact-container{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    #contact .contact-container .textarea {
+        width: 100%;
+        text-align: center;
+    }
 }
 
